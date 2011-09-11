@@ -24,7 +24,7 @@ export HISTSIZE=5000
 shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -54,11 +54,6 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
 
 export PS1='\u@\h:\[\033[1;34m\]\w\[\033[0m\]$(parse_git_branch)$ '
 export LANG=en_US.UTF-8
