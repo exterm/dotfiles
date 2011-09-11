@@ -41,6 +41,8 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias em='emacs -nw'
 alias git=git-achievements
+# hack to use sudo with aliases
+alias sudo='sudo '
 
 # git branch and status in prompt
 function parse_git_dirty {
