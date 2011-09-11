@@ -11,7 +11,13 @@ export HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# Save all lines of a multiple-line command in the same history entry.
+# This allows easy re-editing of multi-line commands.
+shopt -s cmdhist
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# The number of commands to remember in the command history.
+export HISTSIZE=5000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
