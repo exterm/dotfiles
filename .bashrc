@@ -64,4 +64,4 @@ export EDITOR='emacs -nw'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # suggest packages to install for unknown commands
-source /etc/profile.d/pkgfile-hook.sh
+[[ -s /etc/profile.d/pkgfile-hook.sh ]] && source /etc/profile.d/pkgfile-hook.sh
