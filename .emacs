@@ -1,4 +1,4 @@
-;;rails-mode
+;; rails-mode
 (require 'rails)
 
 ;; erlang-mode
