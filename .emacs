@@ -8,6 +8,10 @@
   '(lambda () (add-hook 'local-write-file-hooks
     '(lambda () (save-excursion (untabify (point-min) (point-max)))))))
 
+;; yaml-mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;; erlang-mode
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
