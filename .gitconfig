@@ -5,3 +5,5 @@
 	email = mail@philip.in-aachen.net
 [color]
 	ui = true
+[push]
+	default = current
