@@ -1,6 +1,13 @@
 ;; rails-mode
 (require 'rails)
 
+;; haml-mode
+(require 'haml-mode)
+;; remove tabs from HAML files on save
+(add-hook 'haml-mode-hook
+  '(lambda () (add-hook 'local-write-file-hooks
+    '(lambda () (save-excursion (untabify (point-min) (point-max)))))))
+
 ;; erlang-mode
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
