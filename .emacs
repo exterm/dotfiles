@@ -15,6 +15,8 @@
 ;; erlang-mode
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+(require 'erlang-flymake)
+;(erlang-flymake-only-on-save)
 (require 'erlang-start)
 
 ;; slime
