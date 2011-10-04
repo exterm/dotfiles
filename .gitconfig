@@ -1,6 +1,7 @@
 [alias]
 	st = status
 	pr = pull --rebase
+	dc = diff
 [user]
 	name = Philip Mueller
 	email = mail@philip.in-aachen.net
