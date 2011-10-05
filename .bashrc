@@ -44,6 +44,7 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias em='emacs -nw'
 alias git=git-achievements
+alias tree='tree -C'
 # hack to use sudo with aliases
 alias sudo='sudo '
 
