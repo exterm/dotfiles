@@ -62,6 +62,9 @@ export LANG=en_US.UTF-8
 export DIFFPROG=meld
 export EDITOR='emacs -nw'
 
+# add cabal binaries to path
+export PATH=$PATH:~/.cabal/bin
+
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
