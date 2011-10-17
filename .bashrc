@@ -37,7 +37,7 @@ shopt -s checkwinsize
 
 # some ls aliases
 alias ls='ls --color=auto'
-alias ll='ls -alFh'
+alias ll='ls -lFh'
 alias la='ls -A'
 alias l='ls -CF'
 #more aliases
