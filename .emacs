@@ -24,13 +24,17 @@
 (add-hook 'erlang-mode-hook 'distel-erlang-mode-hook)
 
 ;; slime
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-(require 'slime)
-(slime-setup '(slime-repl))
+;(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+;(require 'slime)
+;(slime-setup '(slime-repl))
 
 ;; clojure-mode
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/clojure-mode")
-(require 'clojure-mode)
+;(add-to-list 'load-path "/usr/share/emacs/site-lisp/clojure-mode")
+;(require 'clojure-mode)
+
+;; swank-clojure
+;(add-to-list 'load-path "/usr/share/emacs/site-lisp/swank-clojure")
+;(require 'swank-clojure)
 
 ;; paredit-mode
 (autoload 'paredit-mode "paredit"
@@ -39,10 +43,6 @@
 ;; pkgbuild-mode
 (autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
-
-;; swank-clojure
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/swank-clojure")
-(require 'swank-clojure)
 
 ;; auctex
 (load "auctex.el" nil t t)
