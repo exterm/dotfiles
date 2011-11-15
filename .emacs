@@ -45,8 +45,8 @@
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
 
 ;; auctex
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(autoload 'auctex "auctex.el" nil t)
+(autoload 'preview-latex "preview-latex.el" nil t)
 
 ;; windmove
 (if (fboundp 'windmove-default-keybindings)
