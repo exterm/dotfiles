@@ -18,10 +18,6 @@
 (require 'erlang-flymake)
 ;(erlang-flymake-only-on-save)
 (require 'erlang-start)
-;; distel
-(add-to-list 'load-path "/usr/share/distel/elisp/")
-(require 'distel)
-(add-hook 'erlang-mode-hook 'distel-erlang-mode-hook)
 
 ;; slime
 ;(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
