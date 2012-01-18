@@ -1,7 +1,9 @@
 [alias]
-	st = status
-	pr = pull --rebase
-	dc = diff --cached
+	st  = status
+	pr  = pull --rebase
+	dc  = diff --cached
+	dcw = diff --cached --color-words
+	dw  = diff --color-words
 [user]
 	name = Philip Mueller
 	email = mail@philip.in-aachen.net
