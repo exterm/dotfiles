@@ -75,11 +75,24 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; delete selection when typing
+(delete-selection-mode 1)
+
 ;; dont show *GNU Emacs* buffer on startup with specific file
 (setq inhibit-startup-message t)
 ;; clear initial text on scratch buffer
 (setq initial-scratch-message nil)
 
+;; show the scroll bar on the right side
+;(setq scroll-bar-mode-explicit t)
+(set-scroll-bar-mode 'right)
+
+;; record and execute keyboard macros
+(global-set-key [f5] 'start-kbd-macro)
+(global-set-key [f6] 'end-kbd-macro)
+(global-set-key [f7] 'call-last-kbd-macro)
+
+;; automatically set variables
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
