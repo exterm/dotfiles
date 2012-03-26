@@ -15,9 +15,9 @@
 ;; erlang-mode
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+(require 'erlang-start)
 (require 'erlang-flymake)
 ;(erlang-flymake-only-on-save)
-(require 'erlang-start)
 
 ;; slime
 ;(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
@@ -101,6 +101,7 @@
  '(rails-ws:default-server-type "webrick")
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(indent-tabs-mode nil)
  '(transient-mark-mode (quote (only . t))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
