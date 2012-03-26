@@ -68,9 +68,10 @@ export PATH="$PATH:$HOME/.cabal/bin"
 # add my scripts to path
 export PATH="$PATH:$HOME/scripts"
 
+# suggest packages to install for unknown commands
+[[ -s /etc/profile.d/pkgfile-hook.sh ]] && source /etc/profile.d/pkgfile-hook.sh
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# suggest packages to install for unknown commands
-[[ -s /etc/profile.d/pkgfile-hook.sh ]] && source /etc/profile.d/pkgfile-hook.sh
