@@ -69,6 +69,11 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
+;; coffeescript-mode
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
 ;; placing backup files in system's temp directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
