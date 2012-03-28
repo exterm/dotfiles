@@ -47,6 +47,7 @@ alias git=git-achievements
 alias tree='tree -C'
 alias gitk='gitk --all'
 alias uh='history -n'
+alias do-update-everything-and-get-drink='yaourt -Syua'
 # hack to use sudo with aliases
 alias sudo='sudo '
 
