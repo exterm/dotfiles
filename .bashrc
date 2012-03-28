@@ -17,7 +17,7 @@ shopt -s cmdhist
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 # The number of commands to remember in the command history.
-export HISTSIZE=5000
+export HISTSIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -46,6 +46,7 @@ alias em='emacs -nw'
 alias git=git-achievements
 alias tree='tree -C'
 alias gitk='gitk --all'
+alias uh='history -n'
 # hack to use sudo with aliases
 alias sudo='sudo '
 
@@ -68,10 +69,12 @@ export PATH="$PATH:$HOME/.cabal/bin"
 # add my scripts to path
 export PATH="$PATH:$HOME/scripts"
 
+# save history after each command
+export PROMPT_COMMAND='history -a'
+
 # suggest packages to install for unknown commands
 [[ -s /etc/profile.d/pkgfile-hook.sh ]] && source /etc/profile.d/pkgfile-hook.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
