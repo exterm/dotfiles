@@ -5,6 +5,7 @@
         dcw = diff --cached --color-words
         dw  = diff --color-words
         cm = commit -m
+        fix = commit --amend
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         update = "!git stash && git pr && git stash pop"
 [user]
