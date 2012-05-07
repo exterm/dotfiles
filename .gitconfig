@@ -7,7 +7,7 @@
         cm = commit -m
         fix = commit --amend
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-        update = "!git stash && echo "--" && git pr && echo "-- popping from stash --" && git stash pop"
+        update = "!git stash && echo -- && git pr && echo -- && git stash pop"
 [user]
         name = Philip Mueller
         email = mail@philip.in-aachen.net
