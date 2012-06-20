@@ -58,7 +58,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-(add-to-list 'load-path "/usr/share/ghc-mod-1.10.17/")
+(add-to-list 'load-path "/usr/share/ghc-mod-1.10.18/")
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
 
