@@ -13,7 +13,7 @@
 
 ;; yaml-mode
 (require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\.yml$'" . yaml-mode))
 
 ;; erlang-mode
 (setq erlang-root-dir "/usr/lib/erlang")
