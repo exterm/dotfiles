@@ -3,10 +3,6 @@
 
 ;; haml-mode
 (require 'haml-mode)
-;; remove tabs from HAML files on save
-(add-hook 'haml-mode-hook
-  '(lambda () (add-hook 'local-write-file-hooks
-    '(lambda () (save-excursion (untabify (point-min) (point-max)))))))
 
 ;; sass-mode
 (require 'sass-mode)
