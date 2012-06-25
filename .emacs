@@ -7,6 +7,12 @@
 ;; sass-mode
 (require 'sass-mode)
 
+;; cucumber feature-mode
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+(setq feature-default-language "en")
+(setq feature-default-i18n-file "/home/philip/.rvm/gems/ruby-1.9.3-p125@skippr/gems/gherkin-2.9.0/lib/gherkin/i18n.yml")
+
 ;; yaml-mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\.yml$'" . yaml-mode))
