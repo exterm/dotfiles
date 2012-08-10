@@ -49,6 +49,7 @@ alias gitk='gitk --all'
 alias uh='history -n'
 alias do-update-everything-and-get-drink='yaourt -Syua'
 alias be='bundle exec'
+alias xbe='xvfb-run bundle exec'
 # hack to use sudo with aliases
 alias sudo='sudo '
 
