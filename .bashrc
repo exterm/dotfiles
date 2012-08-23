@@ -75,6 +75,9 @@ export PATH="$PATH:$HOME/scripts"
 # save history after each command
 export PROMPT_COMMAND='history -a'
 
+# node package manager
+export NODE_PATH=$HOME/.npm:$NODE_PATH
+
 # suggest packages to install for unknown commands
 [[ -s /etc/profile.d/pkgfile-hook.sh ]] && source /etc/profile.d/pkgfile-hook.sh
 
