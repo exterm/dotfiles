@@ -19,3 +19,14 @@
         ui = true
 [push]
         default = current
+[mergetool]
+        prompt = false
+[merge]
+        tool = labeled-meld
+[mergetool "labeled-meld"]
+        cmd = /usr/bin/meld --output $MERGED \
+              $LOCAL  --label 'current branch' \
+              $BASE   --label 'common base (and result file)' \
+              $REMOTE --label 'to be merged' \
+              2>/dev/null
+        trustExitCode = false
