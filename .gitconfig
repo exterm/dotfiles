@@ -7,7 +7,11 @@
         cm = commit -m
         fix = commit --amend
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-        update = "!git stash && echo -- && git pr && echo -- && git stash pop"
+        up     = "!git update"
+        update = "!echo '==> Stash local changes'; res=$(git stash save 'auto stash by update'); echo "$res"; echo; \
+                   echo '==> Fetch from remote repo and merge/rebase'; git pull --rebase; echo; \
+                   grep -q '^No local changes to save' <<< "$res" \
+                   || { echo '==> Apply stashed changes'; git stash pop; }"
 [user]
         name = Philip Mueller
         email = mail@philip.in-aachen.net
@@ -15,3 +19,14 @@
         ui = true
 [push]
         default = current
+[mergetool]
+        prompt = false
+[merge]
+        tool = labeled-meld
+[mergetool "labeled-meld"]
+        cmd = /usr/bin/meld --output $MERGED \
+              $LOCAL  --label 'current branch' \
+              $BASE   --label 'common base (and result file)' \
+              $REMOTE --label 'to be merged' \
+              2>/dev/null
+        trustExitCode = false
