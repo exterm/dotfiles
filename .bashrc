@@ -53,6 +53,16 @@ alias xbe='xvfb-run bundle exec'
 # hack to use sudo with aliases
 alias sudo='sudo '
 
+function rtest {
+    bundle exec ruby -Itest "$@"
+    notify-send "Tests finished" -i 'dialog-information'
+}
+
+function xrtest {
+    xvfb-run bundle exec ruby -Itest "$@"
+    notify-send "Tests in virtual framebuffer finished" -i 'dialog-information'
+}
+
 # git branch and status in prompt
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
