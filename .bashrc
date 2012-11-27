@@ -59,7 +59,7 @@ function rtest {
 }
 
 function xrtest {
-    xvfb-run bundle exec ruby -Itest "$@"
+    xvfb-run -a bundle exec ruby -Itest "$@"
     notify-send "Tests in virtual framebuffer finished" -i 'dialog-information'
 }
 
