@@ -47,7 +47,7 @@ alias git=git-achievements
 alias tree='tree -C'
 alias gitk='gitk --all'
 alias uh='history -n'
-alias do-update-everything-and-get-drink='yaourt -Syu && pacaur -Syua'
+alias do-update-everything-and-get-drink='yaourt -Syua'
 alias be='bundle exec'
 alias xbe='xvfb-run bundle exec'
 # hack to use sudo with aliases
