@@ -6,6 +6,7 @@
         dw  = diff --color-words
         cm = commit -m
         fix = commit --amend
+        list-files = diff-tree --no-commit-id --name-status -r
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         update = "!echo '==> Stash local changes'; res=$(git stash save 'auto stash by update'); echo "$res"; echo; \
                    echo '==> Fetch from remote repo and merge/rebase'; git pull --rebase; echo; \
