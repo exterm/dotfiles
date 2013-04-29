@@ -12,6 +12,7 @@
                    echo '==> Fetch from remote repo and merge/rebase'; git pull --rebase; echo; \
                    echo "$res" | grep -q '^No local changes to save' \
                    || { echo '==> Apply stashed changes'; git stash pop; }"
+        prune-local-branches = "!git checkout master && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d || echo \"-- No local merged branches --\""
 [user]
         name = Philip Mueller
         email = mail@philip.in-aachen.net
