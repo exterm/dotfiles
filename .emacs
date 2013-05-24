@@ -21,6 +21,10 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\.yml$'" . yaml-mode))
 
+;; magit
+(require 'magit)
+(global-set-key (kbd "C-x C-g") 'magit-status)
+
 ;; opa-mode
 (autoload 'opa-js-mode "/usr/share/opa/emacs/opa-js-mode.el" "OPA JS editing mode." t)
 (autoload 'opa-classic-mode "/usr/share/opa/emacs/opa-mode.el" "OPA CLASSIC editing mode." t)
