@@ -69,13 +69,15 @@
 (windmove-default-keybindings))
 
 ;; haskell-mode
-(load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/haskell-mode/")
+(require 'haskell-mode-autoloads)
+(add-to-list 'Info-default-directory-list "/usr/share/emacs/site-lisp/haskell-mode/")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-(add-to-list 'load-path "/usr/share/ghc-mod-1.12.5/")
+(add-to-list 'load-path "/usr/share/ghc-mod-2.0.3/")
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
 
