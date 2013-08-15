@@ -42,7 +42,7 @@ alias la='ls -A'
 alias l='ls -CF'
 #more aliases
 alias grep='grep --color=auto'
-alias em='emacs -nw'
+alias emc='emacs -nw'
 alias git=git-achievements
 alias tree='tree -C'
 alias gitk='gitk --all'
