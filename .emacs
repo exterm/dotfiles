@@ -114,10 +114,43 @@
 ;(setq scroll-bar-mode-explicit t)
 (set-scroll-bar-mode 'right)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; global key bindings
+;; resize window
+(global-set-key (kbd "S-C-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<up>")    'shrink-window)
+(global-set-key (kbd "S-C-<down>")  'enlarge-window)
+
+;; show/hide whitespaces
+(global-set-key [f4] 'whitespace-mode)
+
 ;; record and execute keyboard macros
 (global-set-key [f5] 'start-kbd-macro)
 (global-set-key [f6] 'end-kbd-macro)
 (global-set-key [f7] 'call-last-kbd-macro)
+
+;; hide/show mode: toggle block hiding
+(global-set-key [f8] 'hs-toggle-hiding)
+
+;; case sensitive replace-string
+(global-set-key (kbd "C-h")
+                (lambda ()
+                  (interactive)
+                  (let ((case-fold-search nil))
+                    (call-interactively 'replace-string))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; whitespace mode settings
+(setq whitespace-style
+      '(face tabs spaces trailing lines-tail space-before-tab newline
+        indentation empty space-after-tab space-mark tab-mark newline-mark)
+)
+;(global-whitespace-mode 1)
 
 ;; automatically set variables
 (custom-set-variables
