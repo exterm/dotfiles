@@ -1,3 +1,7 @@
+;; Tell emacs where is your personal elisp lib dir
+;; this is default dir for extra packages
+(add-to-list 'load-path "~/.emacs.d/")
+
 ;; dart-mode
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
 (add-to-list 'auto-mode-alist '("\.dart$" . dart-mode))
