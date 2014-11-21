@@ -9,35 +9,15 @@
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
 (add-to-list 'auto-mode-alist '("\.dart$" . dart-mode))
 
-;; Rinari (rails mode)
-(require 'rinari)
-
 ;; haml-mode
 (require 'haml-mode)
 
 ;; sass-mode
 (require 'sass-mode)
 
-;; cucumber feature-mode
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-(setq feature-default-language "en")
-(setq feature-default-i18n-file "/home/philip/.rvm/gems/ruby-1.9.3-p125@skippr/gems/gherkin-2.9.0/lib/gherkin/i18n.yml")
-
 ;; yaml-mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\.yml$'" . yaml-mode))
-
-;; magit
-(require 'magit)
-(global-set-key (kbd "C-x C-g") 'magit-status)
-
-;; opa-mode
-(autoload 'opa-js-mode "/usr/share/opa/emacs/opa-js-mode.el" "OPA JS editing mode." t)
-(autoload 'opa-classic-mode "/usr/share/opa/emacs/opa-mode.el" "OPA CLASSIC editing mode." t)
-(add-to-list 'auto-mode-alist '("\\.opa$" . opa-js-mode)) ;; <-- Set the default mode here
-(add-to-list 'auto-mode-alist '("\\.js\\.opa$" . opa-js-mode))
-(add-to-list 'auto-mode-alist '("\\.classic\\.opa$" . opa-classic-mode))
 
 ;; erlang-mode
 (setq erlang-root-dir "/usr/lib/erlang")
@@ -80,11 +60,6 @@
 ;; python-mode
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
-
-;; coffeescript-mode
-(require 'coffee-mode)
-(add-to-list 'auto-mode-alist '("\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
 ;; placing backup files in system's temp directory
 (setq backup-directory-alist
