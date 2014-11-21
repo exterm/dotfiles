@@ -1,9 +1,6 @@
 #
 # ~/.bash_profile
-#
+# for ubuntu-derivatives
 
-[[ -f /usr/bin/keychain ]] && /usr/bin/keychain -Q -q ~/.ssh/id_rsa
-[[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
-[[ -f $HOME/.keychain/$HOSTNAME-sh-gpg ]] && source $HOME/.keychain/$HOSTNAME-sh-gpg
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
