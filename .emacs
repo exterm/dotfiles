@@ -2,6 +2,9 @@
 ;; this is default dir for extra packages
 (add-to-list 'load-path "~/.emacs.d/")
 
+(setq auto-mode-alist  (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+
 ;; dart-mode
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
 (add-to-list 'auto-mode-alist '("\.dart$" . dart-mode))
