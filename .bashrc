@@ -5,8 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# force ignoredups and ignorespace
-export HISTCONTROL=ignoreboth
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+# (force ignoredups and ignorespace)
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -16,20 +18,24 @@ shopt -s histappend
 shopt -s cmdhist
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-# The number of commands to remember in the command history.
-export HISTSIZE=10000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+shopt -s globstar
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
 
 #if [ -f ~/.bash_aliases ]; then
 #    . ~/.bash_aliases
@@ -43,7 +49,6 @@ alias l='ls -CF'
 #more aliases
 alias grep='grep --color=auto'
 alias emc='emacs -nw'
-alias git=git-achievements
 alias tree='tree -C'
 alias gitk='gitk --all'
 alias uh='history -n'
@@ -88,8 +93,6 @@ export PROMPT_COMMAND='history -a'
 # node package manager
 export NODE_PATH=$HOME/.npm:$NODE_PATH
 
-# suggest packages to install for unknown commands
-[[ -s /etc/profile.d/pkgfile-hook.sh ]] && source /etc/profile.d/pkgfile-hook.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
