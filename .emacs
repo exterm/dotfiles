@@ -46,23 +46,6 @@
 (require 'erlang-flymake)
 ;(erlang-flymake-only-on-save)
 
-;; slime
-;(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-;(require 'slime)
-;(slime-setup '(slime-repl))
-
-;; clojure-mode
-;(add-to-list 'load-path "/usr/share/emacs/site-lisp/clojure-mode")
-;(require 'clojure-mode)
-
-;; swank-clojure
-;(add-to-list 'load-path "/usr/share/emacs/site-lisp/swank-clojure")
-;(require 'swank-clojure)
-
-;; paredit-mode
-(autoload 'paredit-mode "paredit"
-  "Minor mode for pseudo-structurally editing Lisp code." t)
-
 ;; pkgbuild-mode
 (autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
