@@ -2,8 +2,8 @@
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
 (add-to-list 'auto-mode-alist '("\.dart$" . dart-mode))
 
-;; rails-mode
-(require 'rails)
+;; Rinari (rails mode)
+(require 'rinari)
 
 ;; haml-mode
 (require 'haml-mode)
