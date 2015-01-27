@@ -117,3 +117,5 @@ function xrtest {
     xvfb-run -a bundle exec ruby -Itest "$@"
     notify-send "Tests in virtual framebuffer finished" -i 'dialog-information'
 }
+
+export LESS=-RSFX
