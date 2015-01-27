@@ -99,9 +99,21 @@ CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR≫ "
 CRUNCH_RVM_="\$(optional_rvm_prompt_info)"
 PROMPT="$CRUNCH_RVM_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
 
+
 # add cabal binaries to path
 export PATH="$PATH:$HOME/.cabal/bin"
 # add my scripts to path
 export PATH="$PATH:$HOME/scripts"
 # add rvm to path
 PATH="$PATH:$HOME/.rvm/bin"
+
+
+function rtest {
+    bundle exec ruby -Itest "$@"
+    notify-send "Tests finished" -i 'dialog-information'
+}
+
+function xrtest {
+    xvfb-run -a bundle exec ruby -Itest "$@"
+    notify-send "Tests in virtual framebuffer finished" -i 'dialog-information'
+}
