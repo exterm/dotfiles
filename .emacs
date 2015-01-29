@@ -12,57 +12,9 @@
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
 (add-to-list 'auto-mode-alist '("\.dart$" . dart-mode))
 
-;; haml-mode
-(require 'haml-mode)
-
-;; sass-mode
-(require 'sass-mode)
-
-;; yaml-mode
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\.yml$'" . yaml-mode))
-
-;; erlang-mode
-(setq erlang-root-dir "/usr/lib/erlang")
-(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
-(require 'erlang-start)
-(require 'erlang-flymake)
-;(erlang-flymake-only-on-save)
-
-;; pkgbuild-mode
-(autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
-(setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
-
-;; auctex
-(autoload 'auctex "auctex.el" nil t)
-(autoload 'preview-latex "preview-latex.el" nil t)
-
 ;; windmove
 (if (fboundp 'windmove-default-keybindings)
 (windmove-default-keybindings))
-
-;; haskell-mode
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/haskell-mode/")
-(require 'haskell-mode-autoloads)
-(add-to-list 'Info-default-directory-list "/usr/share/emacs/site-lisp/haskell-mode/")
-(add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-(add-to-list 'load-path "/usr/share/ghc-mod-2.0.3/")
-(autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
-
-;; markdown
-(autoload 'markdown-mode "markdown-mode.el"
-   "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-   (cons '("\.md" . markdown-mode) auto-mode-alist))
-
-;; python-mode
-(autoload 'python-mode "python-mode.el" "Python mode." t)
-(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
 ;; placing backup files in system's temp directory
 (setq backup-directory-alist
@@ -108,6 +60,15 @@
                   (let ((case-fold-search nil))
                     (call-interactively 'replace-string))))
 
+;; nicer scrolling
+(setq
+  scroll-margin 5
+  scroll-conservatively 100000
+  scroll-preserve-screen-position 1)
+
+;; deactivate toolbar
+(tool-bar-mode -1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -120,27 +81,17 @@
 )
 ;(global-whitespace-mode 1)
 
-;; automatically set variables
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
  '(indent-tabs-mode nil)
- '(js-indent-level 2)
- '(rails-ws:default-server-type "webrick")
  '(show-paren-mode t)
- '(tool-bar-mode nil)
- '(transient-mark-mode (quote (only . t))))
+ '(frame-background-mode nil))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
-
-;; nicer scrolling
-(setq
-  scroll-margin 5
-  scroll-conservatively 100000
-  scroll-preserve-screen-position 1)
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+'(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
