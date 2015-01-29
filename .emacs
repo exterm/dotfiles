@@ -1,3 +1,5 @@
+(require 'erlang-flymake)
+
 ;; Tell emacs where is your personal elisp lib dir
 ;; this is default dir for extra packages
 (add-to-list 'load-path "~/.emacs.d/")
