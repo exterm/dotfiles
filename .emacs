@@ -4,6 +4,7 @@
 
 (setq auto-mode-alist  (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(setq ruby-insert-encoding-magic-comment nil)
 
 ;; dart-mode
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
