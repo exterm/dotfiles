@@ -1,12 +1,28 @@
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )
+
+;; live erlang compiler warnings & errors
 (require 'erlang-flymake)
+
+;; really nice interface to git grep
+(global-set-key (kbd "C-c g") 'helm-git-grep)
+;; Invoke `helm-git-grep' from isearch.
+(define-key isearch-mode-map (kbd "C-c g") 'helm-git-grep-from-isearch)
+;; Invoke `helm-git-grep' from other helm.
+(eval-after-load 'helm
+  '(define-key helm-map (kbd "C-c g") 'helm-git-grep-from-helm))
 
 ;; Tell emacs where is your personal elisp lib dir
 ;; this is default dir for extra packages
 (add-to-list 'load-path "~/.emacs.d/")
 
-(setq auto-mode-alist  (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(setq ruby-insert-encoding-magic-comment nil)
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+(setq auto-mode-alist  (cons '("Rakefile$" . enh-ruby-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.rake$" . enh-ruby-mode))
 
 ;; dart-mode
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
