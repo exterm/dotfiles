@@ -117,3 +117,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
+. ~/.nix-profile/etc/profile.d/nix.sh
+fi
