@@ -31,3 +31,5 @@
               $REMOTE --label 'to be merged' \
               2>/dev/null
         trustExitCode = false
+[core]
+	excludesfile = /home/philip/.gitignore_global
