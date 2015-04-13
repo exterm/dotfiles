@@ -98,11 +98,6 @@ export PROMPT_COMMAND='history -a'
 # node package manager
 export NODE_PATH=$HOME/.npm:$NODE_PATH
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -118,6 +113,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
-. ~/.nix-profile/etc/profile.d/nix.sh
-fi
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

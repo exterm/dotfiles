@@ -85,8 +85,6 @@ alias be='bundle exec'
 alias emc='emacs -nw'
 alias sudo='sudo '
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # load rvm
-
 function optional_rvm_prompt_info() {
   [ -f ./.ruby-version ] || return 1
   [ -f $HOME/.rvm/bin/rvm-prompt ] || return 1
@@ -104,8 +102,6 @@ PROMPT="$CRUNCH_RVM_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
 export PATH="$PATH:$HOME/.cabal/bin"
 # add my scripts to path
 export PATH="$PATH:$HOME/scripts"
-# add rvm to path
-PATH="$PATH:$HOME/.rvm/bin"
 
 
 function rtest {
@@ -119,3 +115,5 @@ function xrtest {
 }
 
 export LESS=-RSFX
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
