@@ -105,7 +105,7 @@ export PATH="$PATH:$HOME/.cabal/bin"
 # add my scripts to path
 export PATH="$PATH:$HOME/scripts"
 # add rvm to path
-PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
 
 
 function rtest {
