@@ -98,9 +98,6 @@ export PROMPT_COMMAND='history -a'
 # node package manager
 export NODE_PATH=$HOME/.npm:$NODE_PATH
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -115,3 +112,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

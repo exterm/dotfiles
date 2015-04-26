@@ -85,8 +85,6 @@ alias be='bundle exec'
 alias emc='emacs -nw'
 alias sudo='sudo '
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # load rvm
-
 function optional_rvm_prompt_info() {
   [ -f ./.ruby-version ] || return 1
   [ -f $HOME/.rvm/bin/rvm-prompt ] || return 1
@@ -119,3 +117,5 @@ function xrtest {
 }
 
 export LESS=-RSFX
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
