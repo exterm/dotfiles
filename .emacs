@@ -15,10 +15,6 @@
 (eval-after-load 'helm
   '(define-key helm-map (kbd "C-c g") 'helm-git-grep-from-helm))
 
-;; Tell emacs where is your personal elisp lib dir
-;; this is default dir for extra packages
-(add-to-list 'load-path "~/.emacs.d/")
-
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 (setq auto-mode-alist  (cons '("Rakefile$" . enh-ruby-mode) auto-mode-alist))
