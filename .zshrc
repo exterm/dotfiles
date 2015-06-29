@@ -118,4 +118,14 @@ function xrtest {
 
 export LESS=-RSFX
 
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# npm binaries
+export PATH="$PATH:$HOME/.npm/bin"
+
+# manually inserted binaries
+export PATH="$PATH:$HOME/bin"
