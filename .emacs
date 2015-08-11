@@ -7,6 +7,9 @@
 ;; live erlang compiler warnings & errors
 (require 'erlang-flymake)
 
+;; ruby mode
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; really nice interface to git grep
 (global-set-key (kbd "C-c g") 'helm-git-grep)
 ;; Invoke `helm-git-grep' from isearch.
