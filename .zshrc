@@ -128,4 +128,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.npm/bin"
 
 # manually inserted binaries
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/bin:$PATH"
