@@ -14,7 +14,7 @@
                    || { echo '==> Apply stashed changes'; git stash pop; }"
         prune-local-branches = "!git checkout master && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d || echo \"-- No local merged branches --\""
 [user]
-        name = Philip Mueller
+        name = Philip Müller
         email = mail@philip.in-aachen.net
 [color]
         ui = true
