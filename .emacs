@@ -22,6 +22,9 @@
 (autoload 'dart-mode "dart-mode" "Edit Dart code." t)
 (add-to-list 'auto-mode-alist '("\.dart$" . dart-mode))
 
+;; editorconfig-mode
+(editorconfig-mode 1)
+
 ;; windmove
 (if (fboundp 'windmove-default-keybindings)
 (windmove-default-keybindings))
