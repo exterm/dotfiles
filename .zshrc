@@ -129,3 +129,4 @@ export PATH="$PATH:$HOME/.npm/bin"
 
 # manually inserted binaries
 export PATH="$HOME/bin:$PATH"
+. $HOME/.asdf/asdf.sh
