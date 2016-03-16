@@ -97,15 +97,6 @@ CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR≫ "
 CRUNCH_RVM_="\$(optional_rvm_prompt_info)"
 PROMPT="$CRUNCH_RVM_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
 
-
-# add cabal binaries to path
-export PATH="$PATH:$HOME/.cabal/bin"
-# add my scripts to path
-export PATH="$PATH:$HOME/scripts"
-# add rvm to path
-export PATH="$PATH:$HOME/.rvm/bin"
-
-
 function rtest {
     bundle exec bin/rake test "$@"
     notify-send "Tests finished" -i 'dialog-information'
@@ -122,11 +113,14 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # npm binaries
 export PATH="$PATH:$HOME/.npm/bin"
 
 # manually inserted binaries
 export PATH="$HOME/bin:$PATH"
 . $HOME/.asdf/asdf.sh
+
+# add cabal binaries to path
+export PATH="$PATH:$HOME/.cabal/bin"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
