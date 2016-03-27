@@ -113,12 +113,13 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
+. $HOME/.asdf/asdf.sh
+
 # npm binaries
 export PATH="$PATH:$HOME/.npm/bin"
 
 # manually inserted binaries
 export PATH="$HOME/bin:$PATH"
-. $HOME/.asdf/asdf.sh
 
 # add cabal binaries to path
 export PATH="$PATH:$HOME/.cabal/bin"
