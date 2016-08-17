@@ -1,7 +1,10 @@
 (when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  (require 'package) ;; You might already have this line
+  (add-to-list 'package-archives
+               '("melpa" . "https://melpa.org/packages/"))
+  ;; (add-to-list 'package-archives
+  ;;              '("melpa-stable" . "https://stable.melpa.org/packages/"))
+  (package-initialize) ;; You might already have this line
   )
 
 ;; live erlang compiler warnings & errors
