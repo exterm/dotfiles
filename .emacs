@@ -105,6 +105,9 @@
  '(css-indent-offset 2)
  '(frame-background-mode nil)
  '(indent-tabs-mode nil)
+ '(package-selected-packages
+   (quote
+    (yaml-mode scss-mode sass-mode rvm ruby-end rubocop markdown-mode kerl flymake-yaml flymake-sass flymake-ruby flymake-haml flymake-elixir erlang elixir-mode editorconfig-core editorconfig dockerfile-mode coffee-mode bundler ac-emoji)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
