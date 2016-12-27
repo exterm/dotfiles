@@ -58,8 +58,6 @@ plugins=(git bundler capistrano command-not-found rake-fast rvm)
 
 source $ZSH/oh-my-zsh.sh
 
-export RPROMPT='$(if [[ $? = 0 ]]; then echo "♫"; else; echo "╭∩╮(-_-)╭∩╮"; fi)'
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
