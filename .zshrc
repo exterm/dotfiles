@@ -111,10 +111,6 @@ function xrtest {
 
 export LESS=-RSFX
 
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-
 . $HOME/.asdf/asdf.sh
 
 # npm binaries
@@ -127,3 +123,37 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.cabal/bin"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+if [ "$(uname)" == "Darwin" ]; then
+    # Mac OS
+
+    # homebrew
+    export PATH="/usr/local/bin:$PATH"
+    export HOMEBREW_GITHUB_API_TOKEN="036bbe5272e8ec46e73f9284a31acf70525b1162"
+
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    # GNU/Linux
+
+    # homebrew
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+fi
+
+# go
+export GOPATH="$HOME/gopath"
+export PATH="$PATH:$GOPATH/bin"
+
+# load dev, but only if present and the shell is interactive
+if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
+  source /opt/dev/dev.sh
+fi
+
+source "$HOME/.github-token.sh"
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+rebase_last_green() {
+  printf "${YELLOW} git rebase $(~/Repos/shopify/script/ci_last_green_master) ${NC}\n"
+  git rebase $(~/Repos/shopify/script/ci_last_green_master)
+}
