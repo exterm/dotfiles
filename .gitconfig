@@ -17,6 +17,7 @@
 [user]
         name = Philip Müller
         email = mail@philip.in-aachen.net
+        signingkey = 2180EC6385DAFC8C
 [color]
         ui = true
 [push]
@@ -33,7 +34,9 @@
               2>/dev/null
         trustExitCode = false
 [core]
-	excludesfile = /home/philip/.gitignore_global
+        excludesfile = /Users/philipmueller/.gitignore_global
 [pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
+        diff = diff-so-fancy | less --tabs=1,5 -RFX
+        show = diff-so-fancy | less --tabs=1,5 -RFX
+[commit]
+        gpgsign = true
