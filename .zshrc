@@ -111,7 +111,10 @@ function xrtest {
 
 export LESS=-RSFX
 
-. $HOME/.asdf/asdf.sh
+# load asdf, but only if present and the shell is interactive
+if [[ -f $HOME/.asdf/asdf.sh ]] && [[ $- == *i* ]]; then
+  . $HOME/.asdf/asdf.sh
+fi
 
 # npm binaries
 export PATH="$PATH:$HOME/.npm/bin"
