@@ -27,7 +27,7 @@
 [merge]
         tool = labeled-meld
 [mergetool "labeled-meld"]
-        cmd = /usr/bin/meld --output $MERGED \
+        cmd = `which meld` --output=$MERGED \
               $LOCAL  --label 'current branch' \
               $BASE   --label 'common base (and result file)' \
               $REMOTE --label 'to be merged' \
