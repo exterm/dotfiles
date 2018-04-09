@@ -132,7 +132,6 @@ if [ "$(uname)" = "Darwin" ]; then
 
     # homebrew
     export PATH="/usr/local/bin:$PATH"
-    export HOMEBREW_GITHUB_API_TOKEN="036bbe5272e8ec46e73f9284a31acf70525b1162"
 
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     # GNU/Linux
