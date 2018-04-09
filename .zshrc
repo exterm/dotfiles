@@ -134,7 +134,7 @@ if [ "$(uname)" = "Darwin" ]; then
     export PATH="/usr/local/bin:$PATH"
     export HOMEBREW_GITHUB_API_TOKEN="036bbe5272e8ec46e73f9284a31acf70525b1162"
 
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     # GNU/Linux
 
     # homebrew
@@ -152,7 +152,11 @@ if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
   source /opt/dev/dev.sh
 fi
 
-source "$HOME/.github-token.sh"
+if [ -r "$HOME/.github-token.sh" ]; then
+  source "$HOME/.github-token.sh"
+else
+  printf "zsh init warning: $HOME/.github-token.sh not found\n"
+fi
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
