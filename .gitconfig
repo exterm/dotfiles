@@ -14,7 +14,6 @@
 [user]
         name = Philip Müller
         email = mail@philip.in-aachen.net
-        signingkey = 2180EC6385DAFC8C
 [color]
         ui = true
 [push]
