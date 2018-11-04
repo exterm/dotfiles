@@ -163,3 +163,5 @@ rebase_last_green() {
   printf "${YELLOW} git rebase $(~/Repos/shopify/script/ci_last_green_master) ${NC}\n"
   git rebase $(~/Repos/shopify/script/ci_last_green_master)
 }
+
+eval `keychain --eval --agents ssh id_rsa`
