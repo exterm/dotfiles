@@ -11,6 +11,9 @@
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         update = pull --rebase origin
         prune-local-branches = "!git checkout master && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d || echo \"-- No local merged branches --\""
+        magic-master = "!git checkout master && git pull --rebase origin master"
+        b = branch --sort=-committerdate
+        is = "!git rebase -i $(git merge-base HEAD origin/master)"
 [user]
         name = Philip Müller
         email = mail@philip.in-aachen.net
