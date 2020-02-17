@@ -86,6 +86,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 alias be='bundle exec'
 alias emc='emacs -nw'
 alias sudo='sudo '
+alias t='dev test $(git ls-files | sed -n /_test.rb$/p | fzf)'
+alias cop='be bin/rubocop -a'
 
 function optional_rvm_prompt_info() {
   [ -f ./.ruby-version ] || return 1
@@ -158,10 +160,3 @@ else
 fi
 
 export PATH="$HOME/.yarn/bin:$PATH"
-
-rebase_last_green() {
-  printf "${YELLOW} git rebase $(~/Repos/shopify/script/ci_last_green_master) ${NC}\n"
-  git rebase $(~/Repos/shopify/script/ci_last_green_master)
-}
-
-eval `keychain --eval --agents ssh id_rsa`
