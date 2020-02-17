@@ -43,3 +43,8 @@
         prune = true
 [rebase]
         autoStash = true
+        abbreviateCommands = true
+[remote]
+        pushDefault = origin
+[pull]
+	rebase = true
