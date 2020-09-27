@@ -73,6 +73,7 @@ alias tree='tree -C'
 alias gitk='gitk --all'
 alias uh='history -n'
 alias be='bundle exec'
+alias ping='prettyping --nolegend'
 
 # hack to use sudo with aliases
 alias sudo='sudo '
