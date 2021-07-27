@@ -1,0 +1,17 @@
+#!/bin/bash
+
+RELATIVE_DIR="$(dirname "$0")/.."
+cd $RELATIVE_DIR
+DOTFILES_DIR="$(pwd)"
+
+if [ $SPIN ]; then
+  gpgconf --launch dirmngr
+  gpg --keyserver keys.openpgp.org --recv 3D6D7C3144FEF6EF067C51CA0D2475695DB6CF2F
+fi
+
+for i in $DOTFILES_DIR/dotfiles/*; do
+  echo "Installing $(basename $i)..."
+
+  rm -rf ~/.$(basename $i)
+  ln -s $i ~/.$(basename $i)
+done

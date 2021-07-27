@@ -16,13 +16,15 @@
         is = "!git rebase -i $(git merge-base HEAD origin/master)"
 [user]
         name = Philip Müller
-        email = mail@philip.in-aachen.net
+        useConfigOnly = true
 [color]
         ui = true
 [push]
         default = current
 [mergetool]
         prompt = false
+        keepBackup = false
+        keepTemporaries = false
 [merge]
         tool = labeled-meld
 [mergetool "labeled-meld"]
@@ -33,7 +35,7 @@
               2>/dev/null
         trustExitCode = false
 [core]
-        excludesfile = ~/.gitignore_global
+        excludesfile = ~/.gitignore
 [commit]
         gpgsign = true
 [fetch]
@@ -44,4 +46,10 @@
 [remote]
         pushDefault = origin
 [pull]
-	rebase = true
+        rebase = true
+[branch]
+        autoSetupRebase = always
+[grep]
+        lineNumber = true
+[github]
+        user = exterm

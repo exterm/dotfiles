@@ -49,7 +49,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler capistrano command-not-found rake-fast rvm)
+plugins=(git bundler capistrano command-not-found rake-fast)
 
 # User configuration
 
@@ -89,17 +89,9 @@ alias sudo='sudo '
 alias t='dev test $(git ls-files | sed -n /_test.rb$/p | fzf)'
 alias cop='be bin/rubocop -a'
 
-function optional_rvm_prompt_info() {
-  [ -f ./.ruby-version ] || return 1
-  [ -f $HOME/.rvm/bin/rvm-prompt ] || return 1
-  echo "$CRUNCH_BRACKET_COLOR"\["$CRUNCH_RVM_COLOR${$(~/.rvm/bin/rvm-prompt i v g)#ruby-}$CRUNCH_BRACKET_COLOR"\]"%{$reset_color%}"
-#  echo "$CRUNCH_BRACKET_COLOR"["$CRUNCH_RVM_COLOR${$(~/.rvm/bin/rvm-prompt i v g)#ruby-}$CRUNCH_BRACKET_COLOR"]"%{$reset_color%}"
-}
-
 # overwrite crunch theme
 CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR≫ "
-CRUNCH_RVM_="\$(optional_rvm_prompt_info)"
-PROMPT="$CRUNCH_RVM_$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
+PROMPT="$CRUNCH_DIR_$CRUNCH_PROMPT%{$reset_color%}"
 
 function rtest {
     bundle exec bin/rake test "$@"
@@ -127,7 +119,6 @@ export PATH="$HOME/bin:$PATH"
 # add cabal binaries to path
 export PATH="$PATH:$HOME/.cabal/bin"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 if [ "$(uname)" = "Darwin" ]; then
     # Mac OS
