@@ -21,6 +21,7 @@ alias emc='emacs -nw'
 alias sudo='sudo '
 alias t='dev test $(git ls-files | sed -n /_test.rb$/p | fzf)'
 alias cop='be bin/rubocop -a'
+alias ll='ls -alF'
 
 export LESS=-RSFX
 
