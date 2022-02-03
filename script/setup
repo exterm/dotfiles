@@ -6,7 +6,7 @@ DOTFILES_DIR="$(pwd)"
 
 if [ $SPIN ]; then
   gpgconf --launch dirmngr
-  gpg --keyserver keys.openpgp.org --recv 3D6D7C3144FEF6EF067C51CA0D2475695DB6CF2F
+  gpg --keyserver keys.openpgp.org --recv 96E22B3B231380AF
 fi
 
 for i in $DOTFILES_DIR/dotfiles/*; do
