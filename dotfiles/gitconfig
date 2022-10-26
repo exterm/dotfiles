@@ -10,10 +10,10 @@
         list-files = diff-tree --no-commit-id --name-status -r
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         update = pull --rebase origin
-        prune-local-branches = "!git checkout master && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d || echo \"-- No local merged branches --\""
-        magic-master = "!git checkout master && git pull --rebase origin master"
+        prune-local-branches = "!git checkout main && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d || echo \"-- No local merged branches --\""
+        magic-main = "!git checkout main && git pull --rebase origin main"
         b = branch --sort=-committerdate
-        is = "!git rebase -i $(git merge-base HEAD origin/master)"
+        is = "!git rebase -i $(git merge-base HEAD origin/main)"
 [user]
         name = Philip Müller
         useConfigOnly = true
