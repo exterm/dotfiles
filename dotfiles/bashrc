@@ -78,4 +78,12 @@ alias ping='prettyping --nolegend'
 # hack to use sudo with aliases
 alias sudo='sudo '
 
-eval `keychain --eval --agents ssh id_rsa`
+case $OSTYPE in
+  linux-gnu*)
+    eval `keychain --eval --agents ssh id_rsa`
+    ;;
+esac
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

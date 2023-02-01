@@ -99,3 +99,15 @@ case "${TERM}" in
     bindkey '^[[1;5D' backward-word       # ctrl left
     ;;
 esac
+
+case $OSTYPE in
+  darwin*)
+    export CPATH=$(brew --prefix)/include
+    export LIBRARY_PATH=$(brew --prefix)/lib
+    # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+    export PATH="$PATH:$HOME/.rvm/bin"
+    export NODE_BUILD_DEFINITIONS=$(brew --prefix node-build-update-defs)/share/node-build
+    ;;
+esac
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
