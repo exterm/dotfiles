@@ -113,5 +113,3 @@ case $OSTYPE in
     export NODE_BUILD_DEFINITIONS=$(brew --prefix node-build-update-defs)/share/node-build
     ;;
 esac
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
