@@ -1,23 +1,21 @@
 [alias]
         st  = status
-        pr  = pull --rebase
         dc  = diff --cached
         dcw = diff --cached --color-words
         dw  = diff --color-words
         cm = commit -m
         fix = commit --amend
         pfl = push --force-with-lease
-        list-files = diff-tree --no-commit-id --name-status -r
         graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         update = pull --rebase origin
-        prune-local-branches = "!git checkout main && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d || echo \"-- No local merged branches --\""
+        prune-local-branches = "!for branch in $(gh pr list --state closed --json headRefName --jq '.[].headRefName'); do if git rev-parse --verify --quiet refs/heads/$branch >/dev/null; then git branch -D $branch; fi; done"
         magic-main = "!git checkout main && git pull --rebase origin main"
-        b = branch --sort=-committerdate
-        is = "!git rebase -i $(git merge-base HEAD origin/main)"
+        branch = branch --sort=-committerdate
+        irebase = "!git rebase -i $(git merge-base HEAD origin/main)"
 [user]
 	name = Philip Theus
         useConfigOnly = true
-	signingkey = 377CC5E0763F70EF
+	signingkey = /home/philip/.ssh/id_rsa.pub
 	email = philip@simplexity.quest
 [color]
         ui = true
@@ -56,3 +54,14 @@
         lineNumber = true
 [github]
         user = exterm
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[help]
+  autocorrect = 1
