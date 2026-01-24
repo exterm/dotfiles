@@ -25,12 +25,8 @@ alias ll='ls -alF'
 
 export LESS=-RSFX
 
-# load asdf, but only if present and the shell is interactive
-if [[ -f $HOME/.asdf/asdf.sh ]] && [[ $- == *i* ]]; then
-  . $HOME/.asdf/asdf.sh
-fi
-# append asdf completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
