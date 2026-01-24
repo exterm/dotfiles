@@ -8,7 +8,7 @@
   )
 
 ;; live erlang compiler warnings & errors
-(require 'erlang-flymake)
+;; (require 'erlang-flymake)
 
 ;; ruby mode
 (setq ruby-insert-encoding-magic-comment nil)
