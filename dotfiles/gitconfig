@@ -22,19 +22,6 @@
 [push]
         default = current
 	autoSetupRemote = true
-[mergetool]
-        prompt = false
-        keepBackup = false
-        keepTemporaries = false
-[merge]
-        tool = labeled-meld
-[mergetool "labeled-meld"]
-        cmd = `which meld` --output=$MERGED \
-              $LOCAL  --label 'current branch' \
-              $BASE   --label 'common base (and result file)' \
-              $REMOTE --label 'to be merged' \
-              2>/dev/null
-        trustExitCode = false
 [core]
         excludesfile = ~/.gitignore
 [commit]
