@@ -109,3 +109,5 @@ case $OSTYPE in
     export NODE_BUILD_DEFINITIONS=$(brew --prefix node-build-update-defs)/share/node-build
     ;;
 esac
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
