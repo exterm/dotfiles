@@ -111,3 +111,5 @@ case $OSTYPE in
 esac
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+export RUBY_ZJIT_ENABLE=1
