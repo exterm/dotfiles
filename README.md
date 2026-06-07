@@ -1,4 +1,4 @@
 exterm's dotfiles
 ======
 
-I will explain uncommon things in inline comments or here in the README.
+This repository is archived. I'm now managing my dotfiles in [my worktree.ca account](https://worktree.ca/exterm).
